@@ -32,12 +32,13 @@ function successPosition(position) {
 	var unixtime = new Date(position.timestamp);
 	var latitude = position.coords.latitude;
 	var longitude = position.coords.longitude;
+	var altitude = position.coords.altitude;
 	
 	//OK. Now we want to update the display with the correct values
 	$('#time').val("Recieved data at " + unixtime);
 	$('#lattext').val("Your latitude is " + latitude);
 	$('#longtext').val("Your longitude is " + longitude);
-	
+	$('#alttext').val("You are " + altitude " meters above sea level");
 }
 
 //called if the position is not obtained correctly
