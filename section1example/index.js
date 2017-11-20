@@ -1,3 +1,9 @@
+var locationOptions = {
+maximumAge: 10000,
+timeout: 6000,
+enableHighAccuracy: true
+};
+
 //when the jQuery Mobile page is initialised
 $(document).on('pageinit', function() {
 	
@@ -17,8 +23,8 @@ function getPosition() {
 	$('#time').val("Getting data...");
 	
 	//instruct location service to get position with appropriate callbacks
-	navigator.geolocation.getCurrentPosition(successPosition, failPosition);
-}
+	var watchID = navigator.geolocation.watchPosition(
+	successPosition, failPosition, locationOptions);
 
 
 //called when the position is successfully determined
