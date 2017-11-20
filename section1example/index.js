@@ -44,7 +44,7 @@ function successPosition(position) {
 	$('#time').val("Recieved data at " + unixtime);
 	$('#lattext').val("Your latitude is " + latitude);
 	$('#longtext').val("Your longitude is " + longitude);
-	$('#alttext').val("You are " + altitude " meters above sea level");
+	$('#alttext').val("You are " + altitude + " meters above sea level");
 }
 
 //called if the position is not obtained correctly
@@ -52,4 +52,5 @@ function failPosition(error) {
 	//change time box to show updated message
 	$('#time').val("Error getting data: " + error);
 	
+}
 }
